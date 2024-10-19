@@ -2,9 +2,9 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
+    font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #ffffff;
+    color: #333333;
     line-height: 1.6;
 }
 
@@ -44,14 +44,24 @@ header {
     width: 100%;
     max-width: 1200px;
     background-color: #ffffff;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.fade-in {
-    opacity: 1;
-    transform: translateY(0);
+/* 첫 번째 block을 제외한 모든 block에 적용 */
+.block:not(:first-child) {
+    margin-top: 100px; /* 상단 마진을 늘려 간격 확보 */
+    padding-top: 60px; /* 상단 패딩 추가 */
+    border-top: 1px solid #e0e0e0; /* 구분선 추가 (선택 사항) */
+}
+
+/* Centered logo styles */
+.centered-logo {
+    margin-top: 0; /* 로고 상단 마진 제거 */
+    padding-top: 20px; /* 로고 상단 패딩 추가 */
+}
+
+.centered-logo img {
+    max-width: 200px; /* 로고 크기 제한 */
+    height: auto;
 }
 
 /* Typography */
@@ -144,34 +154,6 @@ footer a:hover {
     max-width: 100%;
     height: auto;
     margin-top: 40px;
-}
-
-/* Floating download button */
-.floating-download-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    background-color: #e14523;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-    z-index: 1000;
-}
-
-.floating-download-button:hover {
-    background-color: #c13513;
-    transform: scale(1.1);
-}
-
-.floating-download-button svg {
-    width: 30px;
-    height: 30px;
-    fill: white;
 }
 
 /* Second block specific styles */
@@ -359,3 +341,166 @@ footer a:hover {
         max-width: 100%;
     }
 }
+
+
+.floating-download-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #e14523;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.floating-download-button:hover {
+    background-color: #c13513;
+    transform: scale(1.1);
+}
+
+.floating-download-button svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+.qr-code-section {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.qr-code-container {
+    background-color: #e14523;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qr-code-image {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 5px;
+}
+
+.qr-code-text {
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.product-image {
+    flex: 0 0 auto; /* 크기 고정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px; /* QR 코드와의 간격 */
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px; /* 제품 이미지의 최대 높이 설정 */
+}
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+    .product-qr-container {
+        flex-direction: column;
+    }
+
+    .product-image {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
+.product-qr-container {
+    display: flex;
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center;
+    margin-top: 30px;
+    max-width: 800px; /* 컨테이너의 최대 너비 설정 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.qr-code-section {
+    flex: 0 0 auto;
+}
+
+.qr-code-container {
+    background-color: #e14523;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qr-code-image {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 5px;
+}
+
+.qr-code-text {
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.product-image {
+    flex: 0 0 auto; /* 크기 고정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px; /* QR 코드와의 간격 */
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px; /* 제품 이미지의 최대 높이 설정 */
+}
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+    .product-qr-container {
+        flex-direction: column;
+    }
+
+    .product-image {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
+/* 다른 요소들의 박스 섀도우나 배경색 제거 */
+.horizontal-content, .feature-item, .comparison-item {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* QR 코드 컨테이너는 유지 */
+.qr-code-container {
+    background-color: #e14523;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* 필요한 경우 다른 요소들의 배경색이나 테두리 제거 */
