@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,45 +12,160 @@
     <!-- Top bar with logo -->
     <header>
         <div class="logo">
-            <img src="logo.png" alt="App Logo">
+            <a href="index.html">
+                <img src="./data/logo.png" alt="App Logo">
+            </a>
         </div>
     </header>
 
     <!-- Content section with explanation blocks -->
     <section class="content">
-        <div class="block">
-            <h2>My Future Asset Prediction</h2>
-            <p>Our app provides a smart prediction of your future assets based on your financial habits and goals.</p>
+        <div class="block fade-in">
+            <!-- Logo image -->
+            <div class="centered-logo">
+                <img src="./data/logo_w.png" alt="Logo Image">
+            </div>
+    
+            <!-- Title of the content -->
+            <h2 class="large-title">국내 1위 스마트청진<br>스마트폰으로 우리아이 폐음 확인</h2>
+    
+            <!-- Horizontal content section -->
+            <div class="horizontal-content">
+                <div class="content-item"># 폐음 소리 녹음</div>
+                <div class="content-item">#초기 폐렴증상 확인</div>
+                <div class="content-item">#소아과 전문의 협력</div>
+            </div>
+    
+            <!-- Product and QR Code section -->
+            <div class="product-qr-container">
+                <!-- QR Code section -->
+                <div class="qr-code-section">
+                    <div class="qr-code-container">
+                        <img src="./data/qr.png" alt="QR Code" class="qr-code-image">
+                        <p class="qr-code-text">QR 스캔하여<br>다운받기</p>
+                    </div>
+                </div>
+
+                <!-- Product image -->
+                <div class="product-image">
+                    <img src="./data/product.png" alt="Product Image">
+                </div>
+            </div>
         </div>
-        <div class="block">
-            <h2>The Habit of Protecting Our Assets</h2>
-            <p>Developing long-lasting habits to safeguard your investments and future wealth.</p>
-        </div>
-        <div class="block">
-            <h2>Comprehensive Financial Insights</h2>
-            <p>Get detailed insights into your spending, investments, and more.</p>
-        </div>
-        <div class="block">
-            <h2>Asset Growth Tracker</h2>
-            <p>Track your asset growth over time and stay on top of your financial health.</p>
-        </div>
-        <div class="block">
-            <h2>Investment Guidance</h2>
-            <p>Receive tailored investment advice and insights to grow your wealth.</p>
-        </div>
-        <div class="block">
-            <h2>Secure & Private</h2>
-            <p>Your financial data is encrypted and secure, ensuring your privacy at all times.</p>
-        </div>
+
+        <div class="block fade-in">
+            <!-- Illustration Image -->
+            <div class="illustration">
+                <img src="./data/illust.png" alt="MedSensing Smart Auscultation Illustration">
+            </div>
         
-        <a href="https://appstore.com" class="app-store-button">Download on the App Store</a>
+            <!-- Text Content -->
+            <div class="content-text">
+                <h2 class="main-title">1위<br>메드센싱 스마트청진</h2>
+                <p class="thank-you-text">메드센싱을 믿고 구매해주셔서<br>진심으로 감사드립니다.</p>
+                <p class="consumer-preference">※ 2024 KCPBA 소비자선호 1위<br>스마트청진 분야</p>
+            </div>
+        </div>
+    
+        <div class="block fade-in">
+            <!-- Customer Satisfaction Section -->
+            <div class="customer-satisfaction">
+                <h2>고객 만족도 평균</h2>
+                <div class="stars">
+                    ★ ★ ★ ★ ★
+                </div>
+                <p class="rating">4.8/5</p>
+                <p class="brand-description">소비자들이 신뢰하는<br>AI스마트청진 브랜드 메드센싱</p>
+            </div>
+        
+            <!-- Review Images -->
+            <div class="reviews">
+                <div class="review-item">
+                    <img src="./data/review1.png" alt="Review 1" class="review-image">
+                </div>
+                <div class="review-item">
+                    <img src="./data/review2.png" alt="Review 2" class="review-image">
+                </div>
+                <div class="review-item">
+                    <img src="./data/review3.png" alt="Review 3" class="review-image">
+                </div>
+            </div>
+        </div>
+
+        <div class="block fade-in">
+            <h2 class="sixth-title">아이가 아플때!</h2>
+            <h3 class="sixth-subtitle">당황하지 마세요.<br>메드센싱으로 지켜주세요</h3>
+            
+            <div class="comparison-container">
+                <div class="comparison-item">
+                    <div class="comparison-header">
+                        <img src="./data/gen_2.png" alt="Traditional Method" class="comparison-img">
+                        <h4 class="comparison-subtitle">1세대<br>스마트청진</h4>
+                    </div>
+                    <ul class="comparison-list">
+                        <li>가정에서 사용 어려움</li>
+                        <li>추가 장비 필요</li>
+                        <li>높은 비용</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-header">
+                        <img src="./data/gen_2.png" alt="MedSensing Method" class="comparison-img">
+                        <h4 class="comparison-subtitle">2세대<br>스마트청진</h4>
+                    </div>
+                    <ul class="comparison-list">
+                        <li>쉬운 사용 (스마트폰녹음)</li>
+                        <li>추가장비 필요없음</li>
+                        <li>가정, 여행지 사용간편</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="block fade-in">
+            <h2 class="fifth-title">5초만에 AI 분석</h2>
+            <h3 class="fifth-subtitle">폐음이상여부<br>확인</h3>
+            <div class="smartphone-image">
+                <img src="./data/smartphone.png" alt="Smartphone" class="smartphone-img">
+            </div>
+            <div class="features-container">
+                <div class="feature-item">
+                    <img src="./data/ill_1.png" alt="Feature 1" class="feature-img">
+                    <p class="feature-text">추가장비no<br>스마트폰<br>녹음</p>
+                </div>
+                <div class="feature-item">
+                    <img src="./data/ill_1.png" alt="Feature 2" class="feature-img">
+                    <p class="feature-text">빠르고<br>간편한<br>측정</p>
+                </div>
+                <div class="feature-item">
+                    <img src="./data/ill_1.png" alt="Feature 3" class="feature-img">
+                    <p class="feature-text">소아과<br>전문의도 인정한<br>결과 확인</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="block fade-in">
+            <h2 class="fourth-title">스마트폰 하나로 실시간</h2>
+            <h3 class="fourth-subtitle">우리아이<br>이상폐음 확인</h3>
+            <div class="baby-image">
+                <img src="./data/baby.png" alt="Baby" class="baby-img">
+            </div>
+        </div>
+
+        <a href="https://appstore.com" class="app-store-button">다운로드하기</a>
     </section>
 
     <!-- Footer with policy and terms -->
     <footer>
-        <p><a href="#">Personal Information Processing Policy</a> | <a href="#">Terms and Conditions of Service</a></p>
+        <p><a href="privacy_policy.html">개인정보처리방침</a> | <a href="terms_of_service.html">사용자이용약관</a></p>
     </footer>
 
     <script src="script.js"></script>
+
+    <a href="https://appstore.com" class="floating-download-button" aria-label="다운로드">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+        </svg>
+    </a>
 </body>
 </html>
