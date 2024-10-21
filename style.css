@@ -1,11 +1,11 @@
 /* General styles */
 body, html {
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
     margin: 0;
     padding: 0;
-    font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #ffffff;
-    color: #333333;
-    line-height: 1.6;
 }
 
 /* Header styles */
@@ -24,33 +24,26 @@ header {
 }
 
 .logo img {
-    height: 30px;
-    width: auto;
+    height: 40px; /* 이전 30px에서 50px로 증가 */
+    width: auto; /* 비율 유지 */
 }
 
 /* Content section styles */
 .content {
-    margin-top: 50px; /* 앱바의 높이에 맞춰 조정 */
-    padding: 0 5%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .block {
-    margin: 20px 0;
-    padding: 20px;
+    padding: 60px 5%;
     text-align: center;
-    width: 100%;
-    max-width: 1200px;
-    background-color: #ffffff;
+    background-color: #ffffff; /* 모든 블록의 배경을 흰색으로 설정 */
 }
 
-/* 첫 번째 block을 제외한 모든 block에 적용 */
-.block:not(:first-child) {
-    margin-top: 100px; /* 상단 마진을 늘려 간격 확보 */
-    padding-top: 60px; /* 상단 패딩 추가 */
-    border-top: 1px solid #e0e0e0; /* 구분선 추가 (선택 사항) */
+/* 홀수/짝수 블록 구분 제거 */
+.block:nth-child(odd),
+.block:nth-child(even) {
+    background-color: #ffffff;
 }
 
 /* Centered logo styles */
@@ -86,23 +79,35 @@ p {
 }
 
 /* App store button */
-.app-store-button {
+.app-store-button-container {
+    text-align: center;
     margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.app-store-button {
+    display: inline-block;
     padding: 15px 40px;
-    background-color: #e14523;
+    background-color: #fa7394;
     color: white;
     text-decoration: none;
     border-radius: 30px;
     font-size: 1.2em;
     font-weight: 600;
     transition: all 0.3s ease;
-    display: inline-block;
 }
 
 .app-store-button:hover {
-    background-color: #c13513;
+    background-color: #e85c7e; /* 호버 시 약간 어두운 색상 */
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(225, 69, 35, 0.3);
+    box-shadow: 0 4px 8px rgba(250, 115, 148, 0.3);
+}
+
+@media (max-width: 768px) {
+    .app-store-button {
+        padding: 12px 30px;
+        font-size: 1.1em;
+    }
 }
 
 /* Footer styles */
@@ -127,10 +132,37 @@ footer a:hover {
 
 /* First block specific styles */
 .large-title {
-    font-size: 3em;
+    font-family: 'Pretendard', 'Montserrat', sans-serif;
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #333333;
+    line-height: 1.2;
     text-align: center;
+    margin-bottom: 10px;
+}
+
+.large-title span {
+    display: block;
+    font-size: 0.7em;
+    font-weight: 600;
+    color: #fa7394; /* 원래의 강조 색상으로 변경 */
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .large-title {
+        font-size: 2.2em;
+    }
+    .large-title span {
+        font-size: 0.8em;
+    }
+}
+
+.subtitle {
+    font-size: 1.8em;
+    font-weight: 500;
+    color: #0056b3;
     margin-bottom: 30px;
-    color: #2c3e50;
 }
 
 .horizontal-content {
@@ -141,13 +173,14 @@ footer a:hover {
 }
 
 .content-item {
-    background-color: #e14523;
+    background-color: #fa7394;
     color: white;
     padding: 10px 20px;
     border-radius: 25px;
     font-size: 1.1em;
     font-weight: 600;
     margin: 10px;
+    border-bottom: 2px solid #fa7394;
 }
 
 .product-image img {
@@ -160,7 +193,7 @@ footer a:hover {
 .main-title {
     font-size: 3.5em;
     margin-bottom: 40px;
-    color: #e14523;
+    color: #fa7394;
 }
 
 .thank-you-text {
@@ -186,7 +219,7 @@ footer a:hover {
 .rating {
     font-size: 4em;
     font-weight: 700;
-    color: #e14523;
+    color: #fa7394;
     margin: 20px 0;
 }
 
@@ -220,7 +253,7 @@ footer a:hover {
 /* Fourth and Fifth block specific styles */
 .fourth-title, .fifth-title, .sixth-title {
     font-size: 2.2em;
-    color: #e14523;
+    color: #fa7394;
     margin-bottom: 15px;
 }
 
@@ -260,47 +293,78 @@ footer a:hover {
 /* Sixth block specific styles */
 .comparison-container {
     display: flex;
-    justify-content: center;
-    gap: 60px;
-    margin-top: 60px;
+    justify-content: space-between;
+    max-width: 700px; /* 최대 너비를 800px에서 700px로 줄임 */
+    margin: 40px auto;
+    gap: 20px;
 }
 
 .comparison-item {
     flex: 1;
-    max-width: 400px;
+    text-align: center;
+    padding: 25px 20px; /* 좌우 패딩을 줄임 */
+    background-color: #fff;
+    border: 2px solid #fa7394;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(250, 115, 148, 0.1);
+}
+
+.comparison-header {
+    margin-bottom: 20px;
+}
+
+.comparison-img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
 }
 
 .comparison-subtitle {
-    font-size: 1.8em;
+    font-size: 1.2em;
     font-weight: 600;
-    margin-bottom: 25px;
-    color: #2c3e50;
+    margin-bottom: 15px;
+    color: #333;
 }
 
 .comparison-list {
     list-style-type: none;
     padding: 0;
+    margin: 0;
     text-align: left;
 }
 
 .comparison-list li {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     position: relative;
-    padding-left: 30px;
-    font-size: 1.1em;
-    color: #34495e;
+    padding-left: 20px;
+    color: #555;
 }
 
 .comparison-list li::before {
-    content: "✓";
+    content: "•";
     position: absolute;
     left: 0;
-    color: #e14523;
-    font-weight: bold;
+    color: #fa7394;
+}
+
+@media (max-width: 768px) {
+    .comparison-container {
+        flex-direction: column;
+        max-width: 90%; /* 모바일에서의 최대 너비 조정 */
+    }
+
+    .comparison-item {
+        margin-bottom: 20px;
+    }
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
+    .app-store-button {
+        padding: 12px 30px;
+        font-size: 1.1em;
+    }
+
     .large-title {
         font-size: 2.5em;
     }
@@ -340,6 +404,10 @@ footer a:hover {
         margin-bottom: 40px;
         max-width: 100%;
     }
+
+    .logo img {
+        height: 40px; /* 모바일에서는 조금 더 작게 */
+    }
 }
 
 
@@ -349,7 +417,7 @@ footer a:hover {
     right: 20px;
     width: 60px;
     height: 60px;
-    background-color: #e14523;
+    background-color: #fa7394;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -360,7 +428,7 @@ footer a:hover {
 }
 
 .floating-download-button:hover {
-    background-color: #c13513;
+    background-color: #e85c7e; /* 호버 시 약간 어두운 색상 */
     transform: scale(1.1);
 }
 
@@ -377,7 +445,7 @@ footer a:hover {
 }
 
 .qr-code-container {
-    background-color: #e14523;
+    background-color: #fa7394;
     padding: 15px;
     border-radius: 10px;
     display: flex;
@@ -414,7 +482,7 @@ footer a:hover {
     max-height: 300px; /* 제품 이미지의 최대 높이 설정 */
 }
 
-/* 반응형 디자인을 위한 미디어 쿼리 */
+/* 반응 디자인을 위한 미디어 쿼리 */
 @media (max-width: 768px) {
     .product-qr-container {
         flex-direction: column;
@@ -441,7 +509,7 @@ footer a:hover {
 }
 
 .qr-code-container {
-    background-color: #e14523;
+    background-color: #fa7394;
     padding: 15px;
     border-radius: 10px;
     display: flex;
@@ -498,9 +566,42 @@ footer a:hover {
 
 /* QR 코드 컨테이너는 유지 */
 .qr-code-container {
-    background-color: #e14523;
+    background-color: #fa7394;
     padding: 15px;
     border-radius: 10px;
 }
 
 /* 필요한 경우 다른 요소들의 배경색이나 테두리 제거 */
+
+.product-qr-container, .customer-satisfaction, .comparison-container, .features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .block {
+        padding: 40px 5%;
+    }
+
+    .large-title {
+        font-size: 2em;
+    }
+
+    .subtitle {
+        font-size: 1.5em;
+    }
+}
+
+.resized-image {
+    width: 150px !important; /* 원하는 너비로 고정 */
+    height: auto !important; /* 높이는 비율에 맞게 자동 조정 */
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+@media (max-width: 768px) {
+    .resized-image {
+        width: 80% !important; /* 모바일에서는 화면 너비의 80%로 설정 */
+        max-width: 300px !important; /* 최대 너비 제한 */
+    }
+}
